@@ -1,5 +1,5 @@
 # Hackathon Backend API
-This is the backend service for the Hackathon project, built with **Node.js**, **Express**, and **MongoDB Atlas**. It serves transaction data to be consumed by a frontend (e.g. React, Vue).
+This is the backend service for the Hackathon project, built with **Node.js**, **Express**, and **MongoDB Atlas**. It serves transaction data to be consumed by a frontend (React).
 
 ## Tech Stack
 
@@ -66,9 +66,9 @@ GET /api/transactions
 
 Returns a list of all transactions from the MongoDB collection.
 
-```bash
 Example Response:
 
+```bash
 [
   {
     "_id": "64f...abc",
