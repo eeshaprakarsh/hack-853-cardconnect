@@ -146,7 +146,8 @@ Example Response:
     "desc": "RESTO LES SAISONS DE COREMONTREAL QC",
     "amount": -14.64,
     "category": "Food"
-  }
+  },
+  ...
 ]
 ```
 
@@ -173,15 +174,15 @@ fetch(`${process.env.REACT_APP_API_URL}/api/transactions`);
 
 ```bash
 yarn start               # Start the server
-yarn eslint .            # Check Lint errors
-yarn eslint . --fix      # Fix lint errors and warnings
+yarn eslint .            # Check Lint errors and warnings
+yarn eslint . --fix      # Fix lint errors 
 ```
 
 ## Contributors
 
-1. Backend: Eesha Prakarsh
-2. Frontend: Dara Soumgit, Hanna Kuchynski
-3. Solution design, integration and support: Anthony Kim
+1. ***Backend:*** Eesha Prakarsh
+2. ***Frontend:*** Dara Soumgit, Hanna Kuchynski
+3. ***Solution design, integration and support:*** Anthony Kim
 
 
 
