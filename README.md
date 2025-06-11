@@ -1,15 +1,16 @@
-# Hackathon Backend API
-This is the backend service for the Hackathon project, built with **Node.js**, **Express**, and **MongoDB Atlas**. It serves transaction data to be consumed by a frontend (React).
+# Hackathon(853) Backend API
+A Node.js + Express + MongoDB backend for managing financial transactions with **geospatial support**. Built with Yarn Plug'n'Play (Zero Install) and ES Modules.
 
-## Tech Stack
+## Features
 
 ```bash
-Node.js 18+
-Express
-MongoDB Atlas (via Mongoose)
-Yarn v3+ (Zero-Install, PnP)
-ESLint (flat config)
-CORS enabled for frontend consumption
+CRUD APIs for transaction data
+GeoJSON-based location storage
+Proximity search using MongoDB’s `$near`
+Migration script to upgrade old data
+Yarn Plug'n'Play (no `node_modules`)
+Dotenv for environment management
+ESLint & GitLab CI support
 ```
 
 ## Getting Started
@@ -37,8 +38,6 @@ Create a .env file in the root:
 MONGODB_URI=mongo_uri
 PORT=8080
 ```
-
-Never commit .env — it's in .gitignore
 
 ## Project Structure
 
@@ -71,13 +70,17 @@ Example Response:
 ```bash
 [
   {
-    "_id": "64f...abc",
+    "location": {
+      "type": "Point",
+      "coordinates": [-73.57490532, 45.49586357]
+    },
+    "_id": "68486c0197b0a1edbf40ab61",
+    "filter": 5,
+    "id": 1,
     "date": "2022-10-27",
-    "desc": "LES SAISONS DE CREMORNTREAL QC",
-    "amount": 144.64,
-    "category": "Food",
-    "lat": 45.4567,
-    "lng": -73.5749
+    "desc": "RESTO LES SAISONS DE COREMONTREAL QC",
+    "amount": -14.64,
+    "category": "Food"
   },
   ...
 ]
