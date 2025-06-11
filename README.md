@@ -181,9 +181,9 @@ yarn eslint . --fix      # Fix lint errors
 
 ## Contributors
 
-1. ***Backend:*** Eesha Prakarsh
-2. ***Frontend:*** Dara Soumgit, Hanna Kuchynski
-3. ***Solution design, integration and support:*** Anthony Kim
+1. **Backend:** Eesha Prakarsh
+2. **Frontend:** Dara Soumgit, Hanna Kuchynski
+3. **Solution design, integration and support:** Anthony Kim
 
 
 
