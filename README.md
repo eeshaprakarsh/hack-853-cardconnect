@@ -7,10 +7,10 @@ A Node.js + Express + MongoDB backend for managing financial transactions with *
 CRUD APIs for transaction data
 GeoJSON-based location storage
 Proximity search using MongoDB’s `$near`
-Migration script to upgrade old data
+Migration script to upgrade old data in MongoDb (File name: migrateLocation.js)
 Yarn Plug'n'Play (no `node_modules`)
 Dotenv for environment management
-ESLint & GitLab CI support
+ESLint support
 ```
 
 ## Getting Started
@@ -59,11 +59,13 @@ hackathon-be/
 
 ## API Endpoints
 
+
+
+### 1. GET all transactions
+
 ```bash
 GET /api/transactions
 ```
-
-Returns a list of all transactions from the MongoDB collection.
 
 Example Response:
 
@@ -86,6 +88,69 @@ Example Response:
 ]
 ```
 
+### 2. GET a single transaction by ID
+
+```bash
+GET /api/transactions/:id
+```
+
+### 3. CREATE a new transaction
+
+```bash
+POST /api/transactions
+```
+
+### 4. UPDATE a transaction by ID
+
+```bash
+PUT /api/transactions/:id
+```
+
+### 5. DELETE a transaction by ID
+
+```bash
+DELETE /api/transactions/:id
+```
+
+### 6. Filter transactions by location 
+
+```bash
+POST /api/transactions/nearby
+```
+
+Example Payload:
+
+```bash
+{
+    location: {
+        lng: -73.57799065,
+        lat: 45.49675911,
+        radius: 30  // miles
+    }
+}
+```
+
+Example Response:
+
+```bash
+[
+  {
+    "location": {
+      "type": "Point",
+      "coordinates": [-73.57490532, 45.49586357]  //[lng, lat]
+    },
+    "_id": "68486c0197b0a1edbf40ab61",
+    "filter": 5,
+    "id": 1,
+    "date": "2022-10-27",
+    "desc": "RESTO LES SAISONS DE COREMONTREAL QC",
+    "amount": -14.64,
+    "category": "Food"
+  }
+]
+```
+
+
 ## Frontend Integration
 
 Use this endpoint in the frontend:
@@ -107,15 +172,9 @@ fetch(`${process.env.REACT_APP_API_URL}/api/transactions`);
 ## Development Scripts
 
 ```bash
-yarn start     # Start the server
-```
-
-## Upcoming Features
-
-```bash
-POST /api/transactions to add data #to be discussed
-Query/filter transactions
-Pagination & search support
+yarn start               # Start the server
+yarn eslint .            # Check Lint errors
+yarn eslint . --fix      # Fix lint errors and warnings
 ```
 
 ## Contributors

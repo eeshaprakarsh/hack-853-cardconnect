@@ -81,7 +81,7 @@ router.delete('/:id', async (req, res) => {
 router.post('/nearby', async (req, res) => {
   const { location } = req.body;
   if (!location?.lat || !location?.lng || !location?.radius) {
-    return res.status(400).json({ message: 'lat, lng, and radius are required' });
+    return res.status(400).json({ message: 'lng, lat, and radius are required' });
   }
   const radiusInMeters = location.radius * 1609.34;
   try {
