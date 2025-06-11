@@ -1,5 +1,6 @@
 import express from 'express';
 import Transaction from '../models/transaction.js';
+
 const router = express.Router();
 
 // GET all transactions
@@ -50,7 +51,7 @@ router.put('/:id', async (req, res) => {
   const { id } = req.params;
   try {
     const updated = await Transaction.findOneAndUpdate(
-      { id: Number(id) }, // or use _id
+      { id: Number(id) },
       req.body,
       { new: true }
     );
@@ -101,4 +102,5 @@ router.post('/nearby', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
 export default router;
