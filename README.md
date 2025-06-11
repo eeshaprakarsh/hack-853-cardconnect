@@ -1,5 +1,5 @@
 # Hackathon(853) Backend API
-A Node.js + Express + MongoDB backend for managing financial transactions with **geospatial support**. Built with Yarn Plug'n'Play (Zero Install) and ES Modules.
+A Node.js + Express + MongoDB backend for managing Credit Card transactions with **geospatial support**. Built with Yarn Plug'n'Play and ES Modules.
 
 ## Features
 
@@ -7,8 +7,9 @@ A Node.js + Express + MongoDB backend for managing financial transactions with *
 CRUD APIs for transaction data
 GeoJSON-based location storage
 Proximity search using MongoDB’s `$near`
+CORS enabled for frontend consumption
+Yarn v3+ (no `node_modules`, Zero-Install, PnP)
 Migration script to upgrade old data in MongoDb (File name: migrateLocation.js)
-Yarn Plug'n'Play (no `node_modules`)
 Dotenv for environment management
 ESLint support
 ```
