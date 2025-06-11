@@ -40,27 +40,15 @@ MONGODB_URI=mongo_uri
 PORT=8080
 ```
 
-## Project Structure
+## Development Scripts
 
 ```bash
-hackathon-be/
-├── models/
-│   └── transaction.js      # Mongoose schema
-├── routes/
-│   └── transactions.js     # API route
-├── db.js                   # MongoDB connection logic
-├── index.js                # Main server entry point
-├── .env                    # Environment variables
-├── .gitignore              # Ignores env, node_modules, etc.
-├── package.json            # Type: module, Yarn 3+, scripts
-├── .eslint.config.js       # Flat ESLint config
-├── .yarnrc.yml             # PnP configuration
-├── yarn.lock               # Yarn lock file
+yarn start               # Start the server
+yarn eslint .            # Check Lint errors and warnings
+yarn eslint . --fix      # Fix lint errors 
 ```
 
 ## API Endpoints
-
-
 
 ### 1. GET all transactions
 
@@ -171,12 +159,23 @@ REACT_APP_API_URL=http://localhost:8080
 fetch(`${process.env.REACT_APP_API_URL}/api/transactions`);
 ```
 
-## Development Scripts
+
+## Project Structure
 
 ```bash
-yarn start               # Start the server
-yarn eslint .            # Check Lint errors and warnings
-yarn eslint . --fix      # Fix lint errors 
+hackathon-be/
+├── models/
+│   └── transaction.js      # Mongoose schema
+├── routes/
+│   └── transactions.js     # API route
+├── db.js                   # MongoDB connection logic
+├── index.js                # Main server entry point
+├── .env                    # Environment variables
+├── .gitignore              # Ignores env, node_modules, etc.
+├── package.json            # Type: module, Yarn 3+, scripts
+├── .eslint.config.js       # Flat ESLint config
+├── .yarnrc.yml             # PnP configuration
+├── yarn.lock               # Yarn lock file
 ```
 
 ## Contributors
