@@ -16,5 +16,5 @@ app.use('/api/transactions', TransactionRoute);
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, ()=>{
-    console.log('Server Running at port:' + PORT);
+    console.log('Server Running at port: ' + PORT);
 });
