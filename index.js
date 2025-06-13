@@ -8,16 +8,7 @@ dotenv.config();
 
 const app = express();
 
-const allowedOrigins = [
-    'http://localhost:3000',
-    'https://hack-853-cardconnect-backend.onrender.com/'
-  ];
-
-app.use(cors({
-    origin: allowedOrigins,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-}));
+app.use(cors());
 
 app.use(express.json());
 
