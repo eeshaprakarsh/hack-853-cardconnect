@@ -8,7 +8,17 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://your-frontend.onrender.com'
+  ];
+
+  app.use(cors({
+    origin: allowedOrigins,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+  }));
+  
 app.use(express.json());
 
 app.use('/api/transactions', TransactionRoute);
